@@ -1,0 +1,39 @@
+* {
+    box-sizing: border-box;
+}
+table {
+    margin: 0 auto;
+    padding-top: 20%;
+}
+
+
+td input {
+    background-color: white;
+    border: 1px solid black;
+    width: 25px;
+    height: 25px;
+    text-align: center;
+
+}
+
+td {
+    position: relative;
+}
+
+#colorChanger {
+    background-color: black;
+    height: 20px;
+    width: 15px;
+}
+
+input {
+    cursor: inherit;
+}
+
+.blackDiv {
+    background-color: black;
+    border: 1px solid black;
+    width: 25px;
+    height: 25px;
+
+}
