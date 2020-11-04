@@ -9,138 +9,151 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Tic Tac Toe</title>
+    <title>xword</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="./styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Numans&display=swap" rel="stylesheet">
+
     <script src="scripts.js"></script>
 </head>
 
 <body>
     Click to mark as correct or incorrect
     <div id="colorChanger"></div>
+
+        <select>
+            <option>Dictionary</option>
+            <option>Thesaurus</option>
+        </select>
+        <input type="textarea" id="lookupVal"></input>
+        <button id="lookupButton">lookup</button>
+
+    <br>
+    <textarea id="results"></textarea>
     <table>
         <tr data-row="1">
-            <td><input data-cell="1" type="text" maxlength="1"></input></td>
-            <td><input data-cell="2" type="text" maxlength="1"></input></td>
-            <td><input data-cell="3" type="text" maxlength="1"></input></td>
-            <td><input data-cell="4" type="text" maxlength="1"></input></td>
-            <td><input data-cell="5" type="text" maxlength="1"></input></td>
-            <td><input data-cell="6" type="text" maxlength="1"></input></td>
-            <td><input data-cell="7" type="text" maxlength="1"></input></td>
-            <td><input data-cell="8" type="text" maxlength="1"></input></td>
-            <td><input data-cell="9" type="text" maxlength="1"></input></td>
-            <td><input data-cell="10" type="text" maxlength="1"></input></td>
+            <td class="input-child"><input data-cell="1" type="text" maxlength="1"></input></td>
+            <td class="input-child"><input data-cell="2" type="text" maxlength="1"></input></td>
+            <td class="input-child"><input data-cell="3" type="text" maxlength="1"></input></td>
+            <td class="input-child"><input data-cell="4" type="text" maxlength="1"></input></td>
+            <td class="input-child"><input data-cell="5" type="text" maxlength="1"></input></td>
+            <td class="input-child"><input data-cell="6" type="text" maxlength="1"></input></td>
+            <td class="input-child"><input data-cell="7" type="text" maxlength="1"></input></td>
+            <td class="input-child"><input data-cell="8" type="text" maxlength="1"></input></td>
+            <td class="input-child"><input data-cell="9" type="text" maxlength="1"></input></td>
+            <td class="input-child"><input data-cell="10" type="text" maxlength="1"></input></td>
         </tr>
         <tr data-row="2">
-            <td><input type="text" maxlength="1"></input></td>
-            <td><input type="text" maxlength="1"></input></td>
-            <td><input type="text" maxlength="1"></input></td>
-            <td><input type="text" maxlength="1"></input></td>
-            <td><input type="text" maxlength="1"></input></td>
-            <td><input type="text" maxlength="1"></input></td>
-            <td><input type="text" maxlength="1"></input></td>
-            <td><input type="text" maxlength="1"></input></td>
-            <td><input type="text" maxlength="1"></input></td>
-            <td><input type="text" maxlength="1"></input></td>
+            <td class="input-child"><input data-cell="1" type="text" maxlength="1"></input></td>
+            <td class="input-child"><input data-cell="2" type="text" maxlength="1"></input></td>
+            <td class="input-child"><input data-cell="3" type="text" maxlength="1"></input></td>
+            <td class="input-child"><input data-cell="4" type="text" maxlength="1"></input></td>
+            <td class="input-child"><input data-cell="5" type="text" maxlength="1"></input></td>
+            <td class="input-child"><input data-cell="6" type="text" maxlength="1"></input></td>
+            <td class="input-child"><input data-cell="7" type="text" maxlength="1"></input></td>
+            <td class="input-child"><input data-cell="8" type="text" maxlength="1"></input></td>
+            <td class="input-child"><input data-cell="9" type="text" maxlength="1"></input></td>
+            <td class="input-child"><input data-cell="10" type="text" maxlength="1"></input></td>
         </tr>
         <tr data-row="3">
-            <td><input type="text" maxlength="1"></input></td>
-            <td><input type="text" maxlength="1"></input></td>
-            <td><input type="text" maxlength="1"></input></td>
-            <td><input type="text" maxlength="1"></input></td>
-            <td><input type="text" maxlength="1"></input></td>
-            <td><input type="text" maxlength="1"></input></td>
-            <td><input type="text" maxlength="1"></input></td>
-            <td><input type="text" maxlength="1"></input></td>
-            <td><input type="text" maxlength="1"></input></td>
-            <td><input type="text" maxlength="1"></input></td>
+            <td class="input-child"><input data-cell="1" type="text" maxlength="1"></input></td>
+            <td class="input-child"><input data-cell="2" type="text" maxlength="1"></input></td>
+            <td class="input-child"><input data-cell="3" type="text" maxlength="1"></input></td>
+            <td class="input-child"><input data-cell="4" type="text" maxlength="1"></input></td>
+            <td class="input-child"><input data-cell="5" type="text" maxlength="1"></input></td>
+            <td class="input-child"><input data-cell="6" type="text" maxlength="1"></input></td>
+            <td class="input-child"><input data-cell="7" type="text" maxlength="1"></input></td>
+            <td class="input-child"><input data-cell="8" type="text" maxlength="1"></input></td>
+            <td class="input-child"><input data-cell="9" type="text" maxlength="1"></input></td>
+            <td class="input-child"><input data-cell="10" type="text" maxlength="1"></input></td>
         </tr>
         <tr data-row="4">
-            <td><input type="text" maxlength="1"></input></td>
-            <td><input type="text" maxlength="1"></input></td>
-            <td><input type="text" maxlength="1"></input></td>
-            <td><input type="text" maxlength="1"></input></td>
-            <td><input type="text" maxlength="1"></input></td>
-            <td><input type="text" maxlength="1"></input></td>
-            <td><input type="text" maxlength="1"></input></td>
-            <td><input type="text" maxlength="1"></input></td>
-            <td><input type="text" maxlength="1"></input></td>
-            <td><input type="text" maxlength="1"></input></td>
+            <td class="input-child"><input data-cell="1" type="text" maxlength="1"></input></td>
+            <td class="input-child"><input data-cell="2" type="text" maxlength="1"></input></td>
+            <td class="input-child"><input data-cell="3" type="text" maxlength="1"></input></td>
+            <td class="input-child"><input data-cell="4" type="text" maxlength="1"></input></td>
+            <td class="input-child"><input data-cell="5" type="text" maxlength="1"></input></td>
+            <td class="input-child"><input data-cell="6" type="text" maxlength="1"></input></td>
+            <td class="input-child"><input data-cell="7" type="text" maxlength="1"></input></td>
+            <td class="input-child"><input data-cell="8" type="text" maxlength="1"></input></td>
+            <td class="input-child"><input data-cell="9" type="text" maxlength="1"></input></td>
+            <td class="input-child"><input data-cell="10" type="text" maxlength="1"></input></td>
         </tr>
         <tr data-row="5">
-            <td><input type="text" maxlength="1"></input></td>
-            <td><input type="text" maxlength="1"></input></td>
-            <td><input type="text" maxlength="1"></input></td>
-            <td><input type="text" maxlength="1"></input></td>
-            <td><input type="text" maxlength="1"></input></td>
-            <td><input type="text" maxlength="1"></input></td>
-            <td><input type="text" maxlength="1"></input></td>
-            <td><input type="text" maxlength="1"></input></td>
-            <td><input type="text" maxlength="1"></input></td>
-            <td><input type="text" maxlength="1"></input></td>
+            <td class="input-child"><input data-cell="1" type="text" maxlength="1"></input></td>
+            <td class="input-child"><input data-cell="2" type="text" maxlength="1"></input></td>
+            <td class="input-child"><input data-cell="3" type="text" maxlength="1"></input></td>
+            <td class="input-child"><input data-cell="4" type="text" maxlength="1"></input></td>
+            <td class="input-child"><input data-cell="5" type="text" maxlength="1"></input></td>
+            <td class="input-child"><input data-cell="6" type="text" maxlength="1"></input></td>
+            <td class="input-child"><input data-cell="7" type="text" maxlength="1"></input></td>
+            <td class="input-child"><input data-cell="8" type="text" maxlength="1"></input></td>
+            <td class="input-child"><input data-cell="9" type="text" maxlength="1"></input></td>
+            <td class="input-child"><input data-cell="10" type="text" maxlength="1"></input></td>
         </tr>
         <tr data-row="6">
-            <td><input type="text" maxlength="1"></input></td>
-            <td><input type="text" maxlength="1"></input></td>
-            <td><input type="text" maxlength="1"></input></td>
-            <td><input type="text" maxlength="1"></input></td>
-            <td><input type="text" maxlength="1"></input></td>
-            <td><input type="text" maxlength="1"></input></td>
-            <td><input type="text" maxlength="1"></input></td>
-            <td><input type="text" maxlength="1"></input></td>
-            <td><input type="text" maxlength="1"></input></td>
-            <td><input type="text" maxlength="1"></input></td>
+            <td class="input-child"><input data-cell="1" type="text" maxlength="1"></input></td>
+            <td class="input-child"><input data-cell="2" type="text" maxlength="1"></input></td>
+            <td class="input-child"><input data-cell="3" type="text" maxlength="1"></input></td>
+            <td class="input-child"><input data-cell="4" type="text" maxlength="1"></input></td>
+            <td class="input-child"><input data-cell="5" type="text" maxlength="1"></input></td>
+            <td class="input-child"><input data-cell="6" type="text" maxlength="1"></input></td>
+            <td class="input-child"><input data-cell="7" type="text" maxlength="1"></input></td>
+            <td class="input-child"><input data-cell="8" type="text" maxlength="1"></input></td>
+            <td class="input-child"><input data-cell="9" type="text" maxlength="1"></input></td>
+            <td class="input-child"><input data-cell="10" type="text" maxlength="1"></input></td>
         </tr>
         <tr data-row="7">
-            <td><input type="text" maxlength="1"></input></td>
-            <td><input type="text" maxlength="1"></input></td>
-            <td><input type="text" maxlength="1"></input></td>
-            <td><input type="text" maxlength="1"></input></td>
-            <td><input type="text" maxlength="1"></input></td>
-            <td><input type="text" maxlength="1"></input></td>
-            <td><input type="text" maxlength="1"></input></td>
-            <td><input type="text" maxlength="1"></input></td>
-            <td><input type="text" maxlength="1"></input></td>
-            <td><input type="text" maxlength="1"></input></td>
+            <td class="input-child"><input data-cell="1" type="text" maxlength="1"></input></td>
+            <td class="input-child"><input data-cell="2" type="text" maxlength="1"></input></td>
+            <td class="input-child"><input data-cell="3" type="text" maxlength="1"></input></td>
+            <td class="input-child"><input data-cell="4" type="text" maxlength="1"></input></td>
+            <td class="input-child"><input data-cell="5" type="text" maxlength="1"></input></td>
+            <td class="input-child"><input data-cell="6" type="text" maxlength="1"></input></td>
+            <td class="input-child"><input data-cell="7" type="text" maxlength="1"></input></td>
+            <td class="input-child"><input data-cell="8" type="text" maxlength="1"></input></td>
+            <td class="input-child"><input data-cell="9" type="text" maxlength="1"></input></td>
+            <td class="input-child"><input data-cell="10" type="text" maxlength="1"></input></td>
         </tr>
         <tr data-row="8">
-            <td><input type="text" maxlength="1"></input></td>
-            <td><input type="text" maxlength="1"></input></td>
-            <td><input type="text" maxlength="1"></input></td>
-            <td><input type="text" maxlength="1"></input></td>
-            <td><input type="text" maxlength="1"></input></td>
-            <td><input type="text" maxlength="1"></input></td>
-            <td><input type="text" maxlength="1"></input></td>
-            <td><input type="text" maxlength="1"></input></td>
-            <td><input type="text" maxlength="1"></input></td>
-            <td><input type="text" maxlength="1"></input></td>
+            <td class="input-child"><input data-cell="1" type="text" maxlength="1"></input></td>
+            <td class="input-child"><input data-cell="2" type="text" maxlength="1"></input></td>
+            <td class="input-child"><input data-cell="3" type="text" maxlength="1"></input></td>
+            <td class="input-child"><input data-cell="4" type="text" maxlength="1"></input></td>
+            <td class="input-child"><input data-cell="5" type="text" maxlength="1"></input></td>
+            <td class="input-child"><input data-cell="6" type="text" maxlength="1"></input></td>
+            <td class="input-child"><input data-cell="7" type="text" maxlength="1"></input></td>
+            <td class="input-child"><input data-cell="8" type="text" maxlength="1"></input></td>
+            <td class="input-child"><input data-cell="9" type="text" maxlength="1"></input></td>
+            <td class="input-child"><input data-cell="10" type="text" maxlength="1"></input></td>
         </tr>
         <tr data-row="9">
-            <td><input type="text" maxlength="1"></input></td>
-            <td><input type="text" maxlength="1"></input></td>
-            <td><input type="text" maxlength="1"></input></td>
-            <td><input type="text" maxlength="1"></input></td>
-            <td><input type="text" maxlength="1"></input></td>
-            <td><input type="text" maxlength="1"></input></td>
-            <td><input type="text" maxlength="1"></input></td>
-            <td><input type="text" maxlength="1"></input></td>
-            <td><input type="text" maxlength="1"></input></td>
-            <td><input type="text" maxlength="1"></input></td>
+            <td class="input-child"><input data-cell="1" type="text" maxlength="1"></input></td>
+            <td class="input-child"><input data-cell="2" type="text" maxlength="1"></input></td>
+            <td class="input-child"><input data-cell="3" type="text" maxlength="1"></input></td>
+            <td class="input-child"><input data-cell="4" type="text" maxlength="1"></input></td>
+            <td class="input-child"><input data-cell="5" type="text" maxlength="1"></input></td>
+            <td class="input-child"><input data-cell="6" type="text" maxlength="1"></input></td>
+            <td class="input-child"><input data-cell="7" type="text" maxlength="1"></input></td>
+            <td class="input-child"><input data-cell="8" type="text" maxlength="1"></input></td>
+            <td class="input-child"><input data-cell="9" type="text" maxlength="1"></input></td>
+            <td class="input-child"><input data-cell="10" type="text" maxlength="1"></input></td>
         </tr>
         <tr data-row="10">
-            <td><input type="text" maxlength="1"></input></td>
-            <td><input type="text" maxlength="1"></input></td>
-            <td><input type="text" maxlength="1"></input></td>
-            <td><input type="text" maxlength="1"></input></td>
-            <td><input type="text" maxlength="1"></input></td>
-            <td><input type="text" maxlength="1"></input></td>
-            <td><input type="text" maxlength="1"></input></td>
-            <td><input type="text" maxlength="1"></input></td>
-            <td><input type="text" maxlength="1"></input></td>
-            <td><input type="text" maxlength="1"></input></td>
+            <td class="input-child"><input data-cell="1" type="text" maxlength="1"></input></td>
+            <td class="input-child"><input data-cell="2" type="text" maxlength="1"></input></td>
+            <td class="input-child"><input data-cell="3" type="text" maxlength="1"></input></td>
+            <td class="input-child"><input data-cell="4" type="text" maxlength="1"></input></td>
+            <td class="input-child"><input data-cell="5" type="text" maxlength="1"></input></td>
+            <td class="input-child"><input data-cell="6" type="text" maxlength="1"></input></td>
+            <td class="input-child"><input data-cell="7" type="text" maxlength="1"></input></td>
+            <td class="input-child"><input data-cell="8" type="text" maxlength="1"></input></td>
+            <td class="input-child"><input data-cell="9" type="text" maxlength="1"></input></td>
+            <td class="input-child"><input data-cell="10" type="text" maxlength="1"></input></td>
         </tr>
     </table>
 </body>
+
 
 </html>

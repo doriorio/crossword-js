@@ -1,11 +1,51 @@
+window.c = {
+    l: function(text){
+        console.log(text);
+    }
+ };
 var application = {
     changed: 0,
     //note to self - group these
-    tableCells: document.getElementsByTagName('td'),
-    //tableCellsArr: Array.prototype.slice.call(tableCells),
-    colorChanger: document.getElementById('colorChanger'),
-    self: this,
-    gridState: null,
+    gridState: {
+        cells: 100,
+        rows: 10,
+        columns: 10,
+        inPlay: []
+    },
+    colorChanger : {},
+    dictionaryLookup: {},
+   tableCells: document.getElementsByTagName('td'),
+
+    lookup: function(evt) {
+        evt.preventDefault();
+        console.log('lookup');
+        let key = '13756c48-e6ff-463e-b33a-0eedc3a6965a'; //atob this later or include secret file in build
+        let endpoint = 'https://dictionaryapi.com/api/v3/references/collegiate/json/'
+        let input = document.getElementById('lookupVal').value;
+        var responseToParse = {};
+        
+        responseToParse = application.getData(endpoint+input+`?key=${key}`);
+        
+
+       
+        
+        
+        
+    },
+    getData: function(endpoint) {
+        let results = document.getElementById('results');
+        fetch(endpoint).then(function(response) {
+            return response.json();
+        }).then(function(data) {
+            for (key in data) {
+                results.innerText = data[key]['shortdef'];
+            }
+        }).catch(function(err){
+            console.log(err);
+        });
+
+        
+    },
 
 
     toggleActive: function(evt) {
@@ -26,18 +66,33 @@ var application = {
         
     },
     initListeners: function() {
-    
-    
+        var self =  this;
+
+        self.colorChanger = document.getElementById('colorChanger');
+        dictionaryLookup =  document.getElementById('lookupButton');
         colorChanger.addEventListener('click', application.colorChange);
-    
+        dictionaryLookup.addEventListener('click', application.lookup);
+
+       let rows = document.querySelectorAll('tr');
+
+       rows.forEach(row => {
+           let key = row.getAttribute('data-row');
+           self.gridState.inPlay[key]= [];
+           row.querySelectorAll('input').forEach(cell => {
+               let cellKey = cell.getAttribute('data-cell');
+               cell.setAttribute('data-row', key)
+
+               self.gridState.inPlay[key].push(cellKey);
+               
+           });
+           
+
+       })
     
     
         Array.prototype.forEach.call(application.tableCells, (tableCell) => {
-    
-                tableCell.addEventListener('input', application.cellInput);
-    
-            
-    })
+                tableCell.addEventListener('input', application.cellInput);   
+    });
 
     },
     colorChange: function(){
@@ -53,16 +108,23 @@ var application = {
 
     },
     cellInput: function(evt){
-        console.log(evt.target.value.length);
-        console.log(evt.target.getAttribute('maxlength'));
-        if (evt.target.value.length == evt.target.getAttribute('maxlength')) {
-        
-            let nextInput = evt.target.parentNode.nextElementSibling.firstChild;
-            if (nextInput.tagName != 'INPUT') {
-                nextInput = nextInput.nextSibling;
-                console.log(nextInput);
-            } 
-            nextInput.focus();
+        var self = application;
+        var inPlay = self.gridState.inPlay;
+        let el = evt.target;
+        var nextInput;
+
+        if (el.value.length == el.getAttribute('maxlength')) {
+            let cell = el.getAttribute('data-cell');
+            let rowAtt = el.getAttribute('data-row');
+            if (inPlay[rowAtt].length == cell) {
+                let temp = inPlay[rowAtt+1];
+                console.log(temp);
+            } else {
+                console.log(inPlay[rowAtt].length)
+            }
+
+
+            //nextInput.focus();
             //works within a row
         }
 
